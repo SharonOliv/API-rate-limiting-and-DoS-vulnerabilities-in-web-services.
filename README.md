@@ -1,8 +1,6 @@
 # API-rate-limiting-and-DoS-vulnerabilities-in-web-services.
 Exploring how web services handle API rate limiting, what happens when limits are exceeded, and testing DoS vulnerabilities. Includes testing with public APIs (like GitHub) and local Flask applications, along with strategies to mitigate such attacks.
 
----
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -11,9 +9,6 @@ Exploring how web services handle API rate limiting, what happens when limits ar
 - [Slow Loris Attack Simulation](#slow-loris-attack-simulation)
 - [Types of Rate Limiting Techniques](#types-of-rate-limiting-techniques)
 - [Conclusion](#conclusion)
-- [References](#references)
-
----
 
 ## Introduction
 
@@ -24,8 +19,6 @@ This project demonstrates:
 - How overloading a local server can simulate DoS vulnerabilities.
 - How different rate-limiting strategies affect protection.
 - Why some attacks, like Slow Loris, require additional mitigation beyond simple request counting.
-
----
 
 ## GitHub API Rate Limit Testing
 
@@ -71,8 +64,6 @@ This project demonstrates:
 5. **Burp Suite Intruder Testing**
     - Sending multiple requests and monitoring for `403` or `429` responses.
 
----
-
 ## Local API Testing (Flask)
 
 A lightweight Flask server was used to simulate and understand rate limiting.
@@ -97,8 +88,6 @@ A lightweight Flask server was used to simulate and understand rate limiting.
     **Observation:**  
     - Server properly rejected the 11th request in a 10-second window.
 
----
-
 ## Slow Loris Attack Simulation
 
 - **Attack Command:**
@@ -110,8 +99,6 @@ A lightweight Flask server was used to simulate and understand rate limiting.
     - Slow Loris attack kept live connections open, causing legitimate users to be unable to connect.
     - Normal API rate limiting methods **do not** protect against Slow Loris attacks.
 
----
-
 ## Types of Rate Limiting Techniques
 
 | Technique               | Description                                                             |
@@ -121,8 +108,6 @@ A lightweight Flask server was used to simulate and understand rate limiting.
 | Sliding Window Counter   | Smoothes counts over a moving window.                                  |
 | Token Bucket             | Adds tokens at a fixed rate; allows bursts if enough tokens are available. |
 | Leaky Bucket             | Processes requests at a constant rate, queues excess ones.             |
-
----
 
 ## Conclusion
 
